@@ -1,0 +1,443 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block homeactive %} active {% endblock homeactive %}
+{% block css %}
+
+.card-margin {
+    margin-bottom: 1.875rem;
+}
+
+.card {
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+    -ms-box-shadow: 0px 0px 10px 0px rgba(82, 63, 105, 0.1);
+}
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid #e6e4e9;
+    border-radius: 8px;
+}
+
+.card .card-header.no-border {
+    border: 0;
+}
+.card .card-header {
+    background: none;
+    padding: 0 0.9375rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+}
+.card-header:first-child {
+    border-radius: calc(8px - 1px) calc(8px - 1px) 0 0;
+}
+
+.widget-49 .widget-49-title-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #edf1fc;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
+  color: #4e73e5;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
+  color: #4e73e5;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fcfcfd;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-day {
+  color: #dde1e9;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-month {
+  color: #dde1e9;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #e8faf8;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-day {
+  color: #17d1bd;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-month {
+  color: #17d1bd;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebf7ff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info .widget-49-date-day {
+  color: #36afff;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-info .widget-49-date-month {
+  color: #36afff;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: floralwhite;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-day {
+  color: #FFC868;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-month {
+  color: #FFC868;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #feeeef;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-day {
+  color: #F95062;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-month {
+  color: #F95062;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #fefeff;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light .widget-49-date-day {
+  color: #f7f9fa;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-light .widget-49-date-month {
+  color: #f7f9fa;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #ebedee;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark .widget-49-date-day {
+  color: #394856;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-dark .widget-49-date-month {
+  color: #394856;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #f0fafb;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-day {
+  color: #68CBD7;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-month {
+  color: #68CBD7;
+  line-height: 1;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
+  color: #3c4142;
+  font-size: 14px;
+}
+
+.widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
+  color: #B1BAC5;
+  font-size: 13px;
+}
+
+.widget-49 .widget-49-meeting-points {
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: .5rem;
+}
+
+.widget-49 .widget-49-meeting-points .widget-49-meeting-item {
+  display: list-item;
+  color: #727686;
+}
+
+.widget-49 .widget-49-meeting-points .widget-49-meeting-item span {
+  margin-left: .5rem;
+}
+
+.widget-49 .widget-49-meeting-action {
+  text-align: right;
+}
+
+.widget-49 .widget-49-meeting-action a {
+  text-transform: uppercase;
+}
+{% endblock css %}
+{% block body %}
+<header class="masthead">
+   <div class="container px-4 px-lg-5 h-100">
+       <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+           <div class="col-lg-8 align-self-end">
+               <h1 class="text-white font-weight-bold">Your Favorite Place for your creative blogs</h1>
+               <hr class="divider" />
+           </div>
+           <div class="col-lg-8 align-self-baseline">
+               <p class="text-white-75 mb-5">Check out others blogs can help you to understand and write better blogs using your creativity! Just LogIn the website and start customizing your blogs help us to build better website together!</p>
+               <a class="btn btn-primary btn-xl" href="/about">Find Out More</a>
+           </div>
+       </div>
+   </div>
+</header>
+<!-- About-->
+<section class="page-section bg-primary" id="about">
+   <div class="container px-4 px-lg-5">
+       <div class="row gx-4 gx-lg-5 justify-content-center">
+           <div class="col-lg-8 text-center">
+               <h2 class="text-white mt-0">We've got what you need!</h2>
+               <hr class="divider divider-light" />
+               <p class="text-white-75 mb-4">Mblog is a place for beginners and has everything you need to write your new blog less than a minute! This is free for all, easy to use, user friendly platform.To write your first blog use the Login button ready to go!</p>
+               <a class="btn btn-light btn-xl" href="/blog/">Get Started!</a>
+           </div>
+       </div>
+   </div>
+</section>
+<!-- Services-->
+<section class="page-section" id="services">
+   <div class="container px-4 px-lg-5">
+       <h2 class="text-center mt-0">At Your Service</h2>
+       <hr class="divider" />
+       <div class="row gx-4 gx-lg-5">
+           <div class="col-lg-3 col-md-6 text-center">
+               <div class="mt-5">
+                   <div class="mb-2"><i class="bi-gem fs-1 text-primary"></i></div>
+                   <h3 class="h4 mb-2">Read Blogs</h3>
+                   <p class="text-muted mb-0">Anyone can read ohtes blog easily.</p>
+               </div>
+           </div>
+           <div class="col-lg-3 col-md-6 text-center">
+               <div class="mt-5">
+                   <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                   <h3 class="h4 mb-2">Up to Date</h3>
+                   <p class="text-muted mb-0">Our bloges are updated regularly to keep users updated also.</p>
+               </div>
+           </div>
+           <div class="col-lg-3 col-md-6 text-center">
+               <div class="mt-5">
+                   <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                   <h3 class="h4 mb-2">Ready to Publish</h3>
+                   <p class="text-muted mb-0">You can use this website to publish blogs or you can only read blogs.</p>
+               </div>
+           </div>
+           <div class="col-lg-3 col-md-6 text-center">
+               <div class="mt-5">
+                   <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                   <h3 class="h4 mb-2">Made with Love</h3>
+                   <p class="text-muted mb-0">Can we really give free service if it's not made with love?</p>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+<!-- Portfolio-->
+<section style="padding-top: 28px;background: beige;position: sticky;">
+  <section class="page-section" id="services">
+    <div class="container px-4 px-lg-5">
+        <h2 class="text-center mt-0">Popular Blogs</h2>
+        <hr class="divider" />
+    </div>
+<div class="container px-2">
+    <div class="row" style="padding-top: 8px;">
+            {% for s in sv %}
+                <div class="col-lg-4">
+                    <div class="card card-margin">
+                        <div class="card-header no-border">
+                            <h5 class="card-title">Blogs</h5>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="widget-49">
+                                <div class="widget-49-title-wrapper">
+                                    <div class="widget-49-date-primary">
+                                        <span class="widget-49-date-day">views</span>
+                                        <span class="widget-49-date-month">{{s.views}}</span>
+                                    </div>
+                                    <div class="widget-49-meeting-info">
+                                        <span class="widget-49-pro-title">{{s.title}}</span>
+                                        <span class="widget-49-meeting-time">{{s.timeStamp}}</span>
+                                    </div>
+                                </div>
+                                <ol class="widget-49-meeting-points">
+                                    <li class="widget-49-meeting-item" style="list-style: none;"><span>{{s.content|safe| truncatechars:150}}</span></li>
+                                </ol>
+                                <div class="widget-49-meeting-action">
+                                    <a href="/blog/{{s.slug}}" class="btn btn-sm btn-flash-border-primary">View Blog</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+</section>
+
+<!-- Call to action-->
+<section class="page-section bg-dark text-white">
+   <div class="container px-4 px-lg-5 text-center">
+       <h2 class="mb-4">Let's make your first blog</h2>
+       {% if user.is_authenticated %}
+       <a class="btn btn-light btn-xl" href="/blog/blogcreate/">Create Blog Now!</a>
+
+       {% else %}
+          <a class="btn btn-light btn-xl" href="/login">LogIn!</a>
+        {% endif %}
+   </div>
+</section>
+<!-- Footer-->
+{% comment %} <footer class="bg-light py-5">
+   <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Incongnito</div></div>
+</footer> {% endcomment %}
+
+{% endblock body %}
+
+
+

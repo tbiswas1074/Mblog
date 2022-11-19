@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock title %}
+{% block contactactive %} active {% endblock contactactive %}
+{% block css %}
+body{
+    background: -webkit-linear-gradient(left, #9c97c3, #e0e1a2);
+    font-family: cursive;
+}
+
+.chat-btn {
+    display: none;
+}
+
+.chat-btn .close {
+    display: none
+}
+
+.chat-btn i {
+    display: none;
+}
+
+#check:checked~.chat-btn i {
+    display: none;
+}
+
+#check:checked~.chat-btn .comment {
+    display: none;
+}
+
+.chat-btn i {
+    display: none;
+}
+
+.chat-btn {
+    display: none;
+}
+
+.wrapper {
+    display: none;
+}
+
+#check:checked~.wrapper {
+    display: none;
+}
+
+.header {
+    display: none;
+}
+
+.chat-form {
+    display: none;
+}
+
+#nme, #msg, #snbt{
+    display: none;
+}
+
+.chat-form textarea {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  header.masthead h1, header.masthead .h1 {
+    font-size: 2.25rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+  }
+
+  .abd{
+    background: -webkit-linear-gradient(left, #9c97c3, #e0e1a2);
+  }
+
+{% endblock css %}
+
+{% block body %} 
+
+<header class="masthead">
+  
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading" style="padding:200px 0">
+            <h1>Welcome to Our Support Page</h1>
+            <p class="subheading">Send your problem or any other query or ant feedback just drop your message</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+<form action="/contact/" method="post"> {% csrf_token %}
+    <section class="page-section" id="contact">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6 text-center">
+                <h2 class="mt-0">Let's Get In Touch!</h2>
+                <hr class="divider" />
+                <p class="text-muted mb-5">Ready to share your experience or any query with us? Send us a messages and we will get back to you as soon as possible!</p>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
+            <div class="col-lg-6">
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- * * SB Forms Contact Form * *-->
+                <!-- * * * * * * * * * * * * * * *-->
+                <!-- This form is pre-integrated with SB Forms.-->
+                <!-- To make this form functional, sign up at-->
+                <!-- https://startbootstrap.com/solution/contact-forms-->
+                <!-- to get an API token!-->
+                <form id="contactForm" action="/blog/blogcreate/" method="post"> {% csrf_token %}
+                    <!-- Name input-->
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." required/>
+                        <label for="title">Your name </label>
+                        <div class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
+                    </div>
+                
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="email" id="email" placeholder="name@example.com" required/>
+                        <label for="email">Email address</label>
+                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                    </div>
+                
+                    <div class="form-floating mb-3">
+                        <input class="form-control" name="phone" id="phone" type="text" placeholder="Contact number..." required/>
+                        <label for="phone">Your contact no </label>
+                        <div class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
+                    </div>
+                
+                    <!-- Message input-->
+                    <div class="form-floating mb-3">
+                        <textarea class="form-control" name="content" id="content" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
+                        <label for="content">Drop your message</label>
+                        <div class="invalid-feedback" data-sb-feedback="message:required">A content is required.</div>
+                    </div>
+
+
+                    <!-- Submit success message-->
+                    <!---->
+                    <!-- This is what your users will see when the form-->
+                    <!-- has successfully submitted-->
+                    <div class="d-none" id="submitSuccessMessage">
+                        <div class="text-center mb-3">
+                            <div class="fw-bolder">Form submission successful!</div>
+                            To activate this form, sign up at
+                            <br />
+                            {% comment %} <a href="blog/blogcreate/"></a> {% endcomment %}
+                        </div>
+                    </div>
+                    <!-- Submit error message-->
+                    <!---->
+                    <!-- This is what your users will see when there is-->
+                    <!-- an error submitting the form-->
+                    <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                    <!-- Submit Button-->
+                    <div class="d-grid"><button class="btn btn-primary btn-xl" id="submitButton" type="submit">Submit</button></div>
+                </form>
+            </div>
+        </div>
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+                <i class="bi-phone fs-2 mb-3 text-muted"></i>
+                <div>+91 123-4567-891</div>
+            </div>
+        </div>
+    </div>
+ </section>
+
+
+
+
+{% comment %} <div class="container contact-form">
+    <div class="contact-image">
+        <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+    </div>
+    <form action="/contact/" method="post"> {% csrf_token %}
+        <h3>Drop Us a Message</h3>
+       <div class="row">
+        <div class="col-md-6">
+            <div class="form-group" style="padding: 2px;margin: 4px;">
+                <textarea name="content" id="content" class="form-control" placeholder="Your Message *" style="width: 100%; height: 171px;"></textarea>
+            </div>
+        </div>
+            <div class="col-md-6">
+                <div class="form-group" style="padding: 2px;margin: 4px;">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Your Name *" value="" />
+                </div>
+                <div class="form-group" style="padding: 2px;margin: 4px;">
+                    <input type="text" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
+                </div>
+                <div class="form-group" style="padding: 2px;margin: 4px;">
+                    <input type="text" name="phone" id="phone" class="form-control" placeholder="Your Phone Number *" value="" />
+                </div>
+                <div class="form-group" style="padding: 2px;margin: 4px;">
+                    <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                </div>
+            </div>
+        </div>
+    </form>
+</div> {% endcomment %}
+{% endblock body %}

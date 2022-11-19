@@ -1,0 +1,481 @@
+{% extends 'base.html' %}
+
+{% block title %} Bloghome {% endblock title %}
+{% block blogactive %} active {% endblock blogactive %}
+
+
+{% block js %}
+<script>
+let previews = document.getElementsByClassName('preview');
+Array.from(previews).forEach((element)=>{
+    element.innerHTML = element.innerText;
+})
+</script>
+{% endblock js %}
+
+
+{% block css %}
+{% comment %} .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .b-example-divider {
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+  }
+
+  .b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+  }
+
+  .bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+  }
+
+  .nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+  }
+
+  .nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  .design:hover{
+    background-image: linear-gradient(to right,#ff00cc 0%,#333399 51%,#ff00cc 100%);
+    background-size: 200% auto;
+    color: #ffffff !important;
+    transition: 0.7s all;
+    -webkit-transition: 0.7s all;
+    background-position: right center;
+
+  }
+
+ 
+  .blockquote-custom {
+    position: relative;
+    font-size: 1.1rem;
+  }
+  
+  .blockquote-custom-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -20px;
+    left: 50px;
+  }
+
+  ul.timeline {
+    list-style-type: none;
+    position: relative;
+}
+ul.timeline:before {
+    content: ' ';
+    background: #d4d9df;
+    display: inline-block;
+    position: absolute;
+    left: 29px;
+    width: 2px;
+    height: 100%;
+    z-index: 400;
+}
+ul.timeline > li {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+ul.timeline > li:before {
+    content: ' ';
+    background: white;
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #22c0e8;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    z-index: 400;
+} {% endcomment %}
+
+body {
+  background: -webkit-linear-gradient(left, #cdae8f, #9dcdbf);
+}
+
+.chat-btn {
+  display: none;
+}
+
+.chat-btn .close {
+  display: none
+}
+
+.chat-btn i {
+  display: none;
+}
+
+#check:checked~.chat-btn i {
+  display: none;
+}
+
+#check:checked~.chat-btn .comment {
+  display: none;
+}
+
+.chat-btn i {
+  display: none;
+}
+
+.chat-btn {
+  display: none;
+}
+
+.wrapper {
+  display: none;
+}
+
+#check:checked~.wrapper {
+  display: none;
+}
+
+.header {
+  display: none;
+}
+
+.chat-form {
+  display: none;
+}
+
+#nme, #msg, #snbt{
+  display: none;
+}
+
+.chat-form textarea {
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+header.masthead {
+  padding-top: 10rem;
+  padding-bottom: calc(10rem - 4.5rem);
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+header.masthead h1, header.masthead .h1 {
+  font-size: 2.25rem;
+  color: white;
+  text-align: center;
+  margin-bottom: 25px;
+}
+header.masthead p {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+
+.abd{
+  background: -webkit-linear-gradient(left, #cdae8f, #9dcdbf);
+  {% comment %} background: #1d061a {% endcomment %}
+}
+
+{% comment %} 
+.card {
+  background: #fff;
+  border: none;
+  border-radius: 8px;
+  margin: 1rem 0;
+  transition: all 300ms linear;
+  box-shadow: 0 0 20px 1px rgb(192 223 101 / 56%);
+  border: 1px solid rgb(243 0 0 / 13%) !important;
+}
+.card h5 {
+  color: #ee6f57;
+  font-weight: bold;
+}
+.card p {
+  text-align: justify;
+  margin-bottom: 0;
+}
+.card:hover {
+  background-color: #ee6f57;
+  border-radius: 8px;
+  color: #fff;
+  transition: all 400ms linear;
+  transform: translateY(-10px) scale(1.01);
+}
+.card:hover h5 {
+  color: #fff;
+} {% endcomment %}
+
+.main-container {
+  padding: 30px;
+}
+
+/* HEADING */
+
+.heading {
+  text-align: center;
+}
+
+.heading__title {
+  font-weight: 600;
+}
+
+.heading__credits {
+  margin: 10px 0px;
+  color: #888888;
+  font-size: 25px;
+  transition: all 0.5s;
+}
+
+.heading__link {
+  text-decoration: none;
+}
+
+.heading__credits .heading__link {
+  color: inherit;
+}
+
+/* CARDS */
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.card {
+  margin: 20px 0px;
+  padding: 20px;
+  width: 100%;
+  min-height: 200px;
+  display: grid;
+  {% comment %} grid-template-rows: 20px 50px 1fr 50px; {% endcomment %}
+  border-radius: 10px;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+  transform: scale(1.01);
+}
+
+.card__link,
+.card__exit,
+.card__icon {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.card__link::after {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.5s;
+}
+
+.card__link:hover::after {
+  width: 100%;
+}
+
+.card__exit {
+  grid-row: 1/2;
+  justify-self: end;
+}
+
+.card__icon {
+  grid-row: 2/3;
+  font-size: 30px;
+}
+
+.card__title {
+  grid-row: 3/4;
+  font-weight: 400;
+  color: #ffffff;
+}
+
+.card__apply {
+  grid-row: 4/5;
+  align-self: center;
+}
+
+/* CARD BACKGROUNDS */
+
+.card-2 {
+  background: radial-gradient(#ff292975, #ffd3d342);
+}
+
+
+
+/* RESPONSIVE */
+
+@media (max-width: 1600px) {
+  .cards {
+    justify-content: center;
+  }
+}
+
+
+{% endblock css %}
+
+
+{% block body %} 
+<header class="masthead">
+  
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading" style="padding:200px 0">
+          <h1>Welcome to the blog gallery</h1>
+          
+          <p class="subheading">Here you can see all the Blogs posted by different user. LogIn to post blog like otehrs.
+            All Bloges are available here.</p>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container my-3">
+    {% comment %} <div class="p-md-5 mb-4 rounded text-bg-dark" style="padding-top: 75px;background-color:RGBA(73,45,60,var(--bs-bg-opacity,1))!important">
+      <div class="col px-0">
+        <h1 class="display-4 fst-italic">Welcome to the Blog Display</h1>
+        <p class="lead my-3">Here you can see all the Blogs posted by different user. LogIn to post blog like otehrs.
+          All Bloges are available here.
+        </p>
+      </div>
+    </div>
+   {% endcomment %}
+   {% comment %} <div class="col-md-6"> {% endcomment %}
+     
+     
+     {% comment %} <div class="container"> {% endcomment %}
+       
+       
+       <section class="mx-auto my-5">
+         
+         {% comment %} <div class="card" style="border-radius:6px 40px 6px 40px !important; box-shadow:0 4px 15px 0 rgb(7 42 68 / 9%) !important; -webkit-transform: translate3d(0,0,0) !important;">
+              <div class="card-body design" style="border-radius:6px 40px 6px 40px !important; box-shadow:0 4px 15px 0 rgb(7 42 68 / 9%) !important; -webkit-transform: translate3d(0,0,0) !important;">
+
+                  <div class="blockquote-custom-icon bg-info shadow-1-strong">
+                    <i class="fa fa-quote-left text-white"></i>
+                  </div>
+
+                  <div class="design col p-4 d-flex flex-column position-static" style="border-radius:6px 40px 6px 40px !important">
+                    <strong class="d-inline-block mb-2 text-success">Blog</strong>
+                    <em><h3 class="mb-0" style="font-family: 'Monoton', cursive;">{{post.title}}</h3></em>
+                    <div class="mb-1 text-muted mt-2 mb-2">{{post.timeStamp}}<span class="mx-4"><button type="button" class="btn btn-light btn-sm" style="border-color: black;
+                      border-radius: 30px 30px 30px 30px !important;
+                      box-shadow: 0 4px 15px 0 rgb(7 42 68 / 9%);" disabled>
+                      Views <span class="badge text-bg-secondary">{{post.views}}</span>
+                    </button></span></div>
+                    <p class="mb-auto"><div class="preview">{{post.content|safe| truncatechars:200}}</div></p>
+                    <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
+                  </div>
+                  <footer class="blockquote-footer pt-4 mt-4 border-top">
+                    post by
+                    <cite title="Source Title">{{post.author}}</cite>
+                  </footer>
+                </div>
+              </div> {% endcomment %}
+              
+              {% comment %} <div class="container">
+                <div class="row">
+                {% for post in allPosts %}
+                <div class="col-md-4">
+                  <div class="card">
+                    <div class="card-body">
+                      <h5>Card Title</h5>
+                      <p>
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. 
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div> {% endcomment %}
+            {% for post in allPosts %}
+            <div class="main-container p-0">
+              <div class="cards">
+                <div class="card card-2">
+                  <div class="card__icon"><i class="fa-solid fa-quote-left"></i></div>  
+                    <p class="card__exit">
+                    <i class="fa-regular fa-heart"></i> {{post.likes}}</p>
+                    <em><h3 class="mb-0" style="font-family: 'Monoton', cursive;">{{post.title}}</h3></em>
+                    <div class="mb-1 text-muted mt-2 mb-2">{{post.timeStamp}}<span class="mx-4"><button type="button" class="btn btn-light btn-sm" style="border-color: black;
+                      border-radius: 30px 30px 30px 30px !important;
+                      box-shadow: 0 4px 15px 0 rgb(7 42 68 / 9%);" disabled>
+                      Views <span class="badge text-bg-secondary">{{post.views}}</span>
+                    </button></span></div>
+                    <p class="mb-auto"><div class="preview">{{post.content|safe|truncatechars:200}}</div></p>
+                    {% if user.is_authenticated %}
+                    <form action="/blog/postView" method="post">{% csrf_token %}
+                      <input type="hidden" name="pSno" value="{{post.sno}}">
+                    <button type="submit" class="card__link" href="/blog/{{post.slug}}" style="background: none;border: none;">Continue reading <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    {% else %}
+                    <a class="card__link" href="/blog/{{post.slug}}" style="background: none;border: none;">Continue reading <i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">
+                      post by
+                      <cite title="Source Title">{{post.author}}</cite>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+          </section>
+        {% comment %} </div> {% endcomment %}
+        {% comment %} </div> {% endcomment %}
+ 
+
+
+  </main>
+
+
+{% endblock body %}
