@@ -367,11 +367,17 @@ header.masthead p {
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="page-heading" style="padding:200px 0">
+        <div class="page-heading" style="padding:200px 0;text-align: center;">
           <h1>Welcome to the blog gallery</h1>
           
           <p class="subheading">Here you can see all the Blogs posted by different user. LogIn to post blog like otehrs.
             All Bloges are available here.</p>
+
+            {% if user.is_authenticated %}
+          <a class="btn btn-light btn-xl" href="/blog/blogcreate/">Lets make your first Blog</a>
+          {% else %}
+          <a class="btn btn-light btn-xl" href="/login/">Lets make your first Blog</a>
+          {% endif %}
           
         </div>
       </div>
