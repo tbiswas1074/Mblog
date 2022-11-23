@@ -1,9 +1,11 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %} {% endblock  %}</title>
+    <link rel="shortcut icon" href="{% static 'letter-b.png' %}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
@@ -11574,10 +11576,10 @@
   
   </head>
   <body>
-
+    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
       <div class="container px-4 px-lg-5">
-          <a class="navbar-brand" href="/">Mblog</a>
+        <img src="{% static 'b.png' %}" height="25px" style="padding-bottom: 4px"/> <a class="navbar-brand" href="/" style="padding-left: 2px;">Mblog</a>
           <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ms-auto my-2 my-lg-0">
@@ -11735,15 +11737,99 @@
 
       {% block body %}{% endblock body %}
       <footer class="text-center text-white abd" style="background-color:rgb(33 37 41);opacity:1;">
+        
         <!-- Grid container -->
         <div class="container p-4 pb-0">
+          <section class="">
+            <div class="container text-center text-md-start mt-5">
+              <!-- Grid row -->
+              <div class="row mt-3">
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold">Mblog</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    A blog is a type of website where the content is presented. Blog content is often referred to as entries or “blog posts”.
+                    Read, write, like comment and be a good user to our website."Thank you"
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Services</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="/login" class="text-white">Login</a>
+                  </p>
+                  <p>
+                    <a href="/signup" class="text-white">Signin</a>
+                  </p>
+                  <p>
+                    <a href="/about" class="text-white">About</a>
+                  </p>
+                  <p>
+                    <a href="/" class="text-white">Thank you for visiting</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Useful links</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p>
+                    <a href="/" class="text-white">Home</a>
+                  </p>
+                  <p>
+                    <a href="/blog/" class="text-white">Blog Display</a>
+                  </p>
+                  <p>
+                    <a href="/blog/blogcreate/" class="text-white">Create Blog</a>
+                  </p>
+                  <p>
+                    <a href="/contact" class="text-white">Help</a>
+                  </p>
+                </div>
+                <!-- Grid column -->
+      
+                <!-- Grid column -->
+                <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold">Contact</h6>
+                  <hr
+                      class="mb-4 mt-0 d-inline-block mx-auto"
+                      style="width: 60px; background-color: #7c4dff; height: 2px"
+                      />
+                  <p><i class="fas fa-home mr-3"></i> India, Bolpur, WB</p>
+                  <p><i class="fas fa-envelope mr-3"></i> biswastuhin43@gmail.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 91 234 567 88 01</p>
+                  <p><i class="fas fa-print mr-3"></i> + 91 234 567 89 38</p>
+                </div>
+                <!-- Grid column -->
+              </div>
+              <!-- Grid row -->
+            </div>
+          </section>
           <!-- Section: Social media -->
           <section class="mb-4">
             <!-- Facebook -->
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #3b5998;border-radius: 50%;"
-              href="#!"
+              href="https://www.facebook.com/"
               role="button"
               ><i class="fab fa-facebook-f"></i
             ></a>
@@ -11752,7 +11838,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #55acee;border-radius: 50%;"
-              href="#!"
+              href="https://twitter.com/"
               role="button"
               ><i class="fab fa-twitter"></i
             ></a>
@@ -11761,7 +11847,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #dd4b39;border-radius: 50%;"
-              href="#!"
+              href="https://www.google.com/"
               role="button"
               ><i class="fab fa-google"></i
             ></a>
@@ -11770,7 +11856,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #ac2bac;border-radius: 50%;"
-              href="#!"
+              href="https://www.instagram.com"
               role="button"
               ><i class="fab fa-instagram"></i
             ></a>
@@ -11779,7 +11865,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #0082ca;border-radius: 50%;"
-              href="#!"
+              href="https://linkedin.com/"
               role="button"
               ><i class="fab fa-linkedin-in"></i
             ></a>
@@ -11787,7 +11873,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #333333;border-radius: 50%;"
-              href="#!"
+              href="https://github.com/"
               role="button"
               ><i class="fab fa-github"></i
             ></a>
@@ -11799,7 +11885,7 @@
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
           © 2020 Copyright:
-          <a class="text-white" href="/">Incognito Mblog</a>
+          <a class="text-white" href="/">Mblog</a>
         </div>
         <!-- Copyright -->
       </footer>

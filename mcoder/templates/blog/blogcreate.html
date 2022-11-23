@@ -86,7 +86,7 @@ body{
                 <!-- To make this form functional, sign up at-->
                 <!-- https://startbootstrap.com/solution/contact-forms-->
                 <!-- to get an API token!-->
-                <form id="contactForm" action="/blog/blogcreate/" method="post"> {% csrf_token %}
+                <form action="/blog/blogcreate/" method="post"> {% csrf_token %}
                     <!-- Name input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="title" name="title" type="text" placeholder="Enter Blog Title..." required/>

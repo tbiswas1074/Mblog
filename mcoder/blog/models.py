@@ -9,6 +9,7 @@ class Post(models.Model):
      content = models.TextField()
      author = models.CharField(max_length=100)
      slug = models.CharField(max_length=130)
+     totalviews = models.IntegerField(default=0)
      views = models.IntegerField(default=0)
      likes = models.IntegerField(default=0)
      timeStamp = models.DateTimeField(default=now)
@@ -40,3 +41,6 @@ class View(models.Model):
     sno = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
+
+
+    

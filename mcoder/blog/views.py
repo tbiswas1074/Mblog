@@ -28,8 +28,9 @@ def blogPost(request, slug):
     a, b = [], []
     c, d = 0, 0
     post = Post.objects.filter(slug=slug).first()
-    # post.views = post.views + 1
-    # post.save()
+    post.totalviews = post.totalviews + 1
+    post.save()
+
     user = request.user
     for ite in Like.objects.filter(post=post):
         if ite.user not in a:

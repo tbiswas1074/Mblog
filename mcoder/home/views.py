@@ -11,7 +11,14 @@ from django.shortcuts import redirect
 
 def home(request):
     sv = Post.objects.filter(views__gte=Post.objects.order_by('-views')[2].views)
-    contex = {'sv':sv}
+    allPosts = Post.objects.all()
+    a, b, c, d = [], [], [], []
+    for i in allPosts:
+        a.append(i.totalviews)
+        b.append(i.views)
+        c.append(i.likes)
+    contex = {'sv':sv, 'totalviews':str(sum(a)), 'views':str(sum(b)), 'likes':str(sum(c)), 'totaluser':str(User.objects.all().count())}
+
     return render(request, "home/home.html", contex)
 
 def handleLogin(request):
@@ -108,6 +115,4 @@ def signup(request):
     except Exception:
         messages.error(request, "No account created")
         return render(request, "home/signup.html")
-
-    
 
