@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 from pathlib import Path
 from django.contrib.messages import constants as messages
 import os
-from decouple import config
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-mi7rhlxz7d4w7!f53&ca$&x^n47v%+ep4xd_chu$qyq#+aq944'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
@@ -138,9 +138,9 @@ STATICFILES_DIRS = os.path.join(BASE_DIR,'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 
-EMAIL_BACKEND = django.core.mail.backends.smtp.EmailBackend
-EMAIL_HOST = smtp.gmail.com
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = biswastuhin1074@gmail.com
-EMAIL_HOST_PASSWORD = cmoywwqxzwaelgek
+EMAIL_HOST_USER = 'biswastuhin1074@gmail.com'
+EMAIL_HOST_PASSWORD = 'cmoywwqxzwaelgek'
 EMAIL_USE_TLS = True
