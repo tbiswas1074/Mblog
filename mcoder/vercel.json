@@ -22,7 +22,7 @@
     },
     {
     "src": "/(.*)",
-    "dest": "mblog/wsgi.py"
+    "dest": "mcoder/wsgi.py"
     }
     ]
     }
