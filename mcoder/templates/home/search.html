@@ -54,11 +54,266 @@
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+  body {
+    background: -webkit-linear-gradient(left, #cdae8f, #9dcdbf);
+  }
+  
+  .chat-btn {
+    display: none;
+  }
+  
+  .chat-btn .close {
+    display: none
+  }
+  
+  .chat-btn i {
+    display: none;
+  }
+  
+  #check:checked~.chat-btn i {
+    display: none;
+  }
+  
+  #check:checked~.chat-btn .comment {
+    display: none;
+  }
+  
+  .chat-btn i {
+    display: none;
+  }
+  
+  .chat-btn {
+    display: none;
+  }
+  
+  .wrapper {
+    display: none;
+  }
+  
+  #check:checked~.wrapper {
+    display: none;
+  }
+  
+  .header {
+    display: none;
+  }
+  
+  .chat-form {
+    display: none;
+  }
+  
+  #nme, #msg, #snbt{
+    display: none;
+  }
+  
+  .chat-form textarea {
+    display: none;
+  }
+  
+  #check {
+    display: none;
+  }
+  
+  header.masthead {
+    padding-top: 10rem;
+    padding-bottom: calc(10rem - 4.5rem);
+    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/static/img/search.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+  
+  header.masthead h1, header.masthead .h1 {
+    font-size: 2.25rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  header.masthead p {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-align: center;
+  }
+  
+  
+  .abd{
+    background: -webkit-linear-gradient(left, #cdae8f, #9dcdbf);
+    {% comment %} background: #1d061a {% endcomment %}
+  }
+  
+  {% comment %} 
+  .card {
+    background: #fff;
+    border: none;
+    border-radius: 8px;
+    margin: 1rem 0;
+    transition: all 300ms linear;
+    box-shadow: 0 0 20px 1px rgb(192 223 101 / 56%);
+    border: 1px solid rgb(243 0 0 / 13%) !important;
+  }
+  .card h5 {
+    color: #ee6f57;
+    font-weight: bold;
+  }
+  .card p {
+    text-align: justify;
+    margin-bottom: 0;
+  }
+  .card:hover {
+    background-color: #ee6f57;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 400ms linear;
+    transform: translateY(-10px) scale(1.01);
+  }
+  .card:hover h5 {
+    color: #fff;
+  } {% endcomment %}
+  
+  .main-container {
+    padding: 30px;
+  }
+  
+  /* HEADING */
+  
+  .heading {
+    text-align: center;
+  }
+  
+  .heading__title {
+    font-weight: 600;
+  }
+  
+  .heading__credits {
+    margin: 10px 0px;
+    color: #888888;
+    font-size: 25px;
+    transition: all 0.5s;
+  }
+  
+  .heading__link {
+    text-decoration: none;
+  }
+  
+  .heading__credits .heading__link {
+    color: inherit;
+  }
+  
+  /* CARDS */
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+  .card {
+    margin: 20px 0px;
+    padding: 20px;
+    width: 100%;
+    min-height: 200px;
+    display: grid;
+    {% comment %} grid-template-rows: 20px 50px 1fr 50px; {% endcomment %}
+    border-radius: 10px;
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.2s;
+  }
+  
+  .card:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.4);
+    transform: scale(1.01);
+  }
+  
+  .card__link,
+  .card__exit,
+  .card__icon {
+    position: relative;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .card__link::after {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.5s;
+  }
+  
+  .card__link:hover::after {
+    width: 100%;
+  }
+  
+  .card__exit {
+    grid-row: 1/2;
+    justify-self: end;
+  }
+  
+  .card__icon {
+    grid-row: 2/3;
+    font-size: 30px;
+  }
+  
+  .card__title {
+    grid-row: 3/4;
+    font-weight: 400;
+    color: #ffffff;
+  }
+  
+  .card__apply {
+    grid-row: 4/5;
+    align-self: center;
+  }
+  
+  /* CARD BACKGROUNDS */
+  
+  .card-2 {
+    background: radial-gradient(#ff292975, #ffd3d342);
+  }
+  
+  
+  
+  /* RESPONSIVE */
+  
+  @media (max-width: 1600px) {
+    .cards {
+      justify-content: center;
+    }
+  }
+  
 {% endblock css %}
 
 {% block body %} 
-<main class="container my-3">
-    <h2>Search results:</h2>
+<header class="masthead">
+  
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="page-heading" style="padding:200px 0;text-align: center;">
+          <h1>Welcome to the blog gallery</h1>
+          
+          <p class="subheading">Here you can see all the Blogs posted by different user. LogIn to post blog like otehrs.
+            All Bloges are available here.</p>
+
+            {% if user.is_authenticated %}
+          <a class="btn btn-light btn-xl" href="/blog/blogcreate/">Lets make your first Blog</a>
+          {% else %}
+          <a class="btn btn-light btn-xl" href="/login/">Lets make your first Blog</a>
+          {% endif %}
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="container my-3 pt-4">
+    <h2 style="text-align: center;color: #eee1da;border-bottom: 0.5px solid #e8d1d1;">Search results</h2>
     {% if allPosts|length < 1 %}
    <p>No search results</p>
     Your search query : <b>{{query}}</b> did not match any documents. <br>
@@ -75,46 +330,38 @@
     {% endif %}
 
     {% for post in allPosts %}
-      {% comment %} <div class="col-md-6"> {% endcomment %}
-        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-          <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-success">Design</strong>
-            <h3 class="mb-0">{{post.title}}</h3>
-            <div class="mb-1 text-muted">{{post.timeStamp}}</div>
-            <p class="mb-auto">{{post.content | truncatechars:500}}</p>
-            <div class="mb-1 text-muted">post by <a href="#">{{post.author}}</a></div>
-            <a href="/blog/{{post.slug}}" class="stretched-link">Continue reading</a>
-          </div>
-          {% comment %} <div class="col-auto d-none d-lg-block">
-            <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-  
-          </div> {% endcomment %}
-        </div>
-      {% comment %} </div> {% endcomment %}
-    {% endfor %}
+            <div class="main-container p-0">
+              <div class="cards">
+                <div class="card card-2">
+                  <div class="card__icon"><i class="fa-solid fa-quote-left"></i></div>  
+                    <p class="card__exit">
+                    <i class="fa-regular fa-heart"></i> {{post.likes}}</p>
+                    <em><h3 class="mb-0" style="font-family: 'Monoton', cursive;">{{post.title}}</h3></em>
+                    <div class="mb-1 text-muted mt-2 mb-2">{{post.timeStamp}}<span class="mx-4"><button type="button" class="btn btn-light btn-sm" style="border-color: black;
+                      border-radius: 30px 30px 30px 30px !important;
+                      box-shadow: 0 4px 15px 0 rgb(7 42 68 / 9%);" disabled>
+                      Views <span class="badge text-bg-secondary">{{post.views}}</span>
+                    </button></span></div>
+                    <p class="mb-auto"><div class="preview">{{post.content|safe|truncatechars:200}}</div></p>
+                    {% if user.is_authenticated %}
+                    <form action="/blog/postView" method="post">{% csrf_token %}
+                      <input type="hidden" name="pSno" value="{{post.sno}}">
+                    <button type="submit" class="card__link" href="/blog/{{post.slug}}" style="background: none;border: none;">Continue reading <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                    {% else %}
+                    <a class="card__link" href="/blog/{{post.slug}}" style="background: none;border: none;">Continue reading <i class="fas fa-arrow-right"></i></a>
+                    {% endif %}
+                    <footer class="blockquote-footer pt-4 mt-4 border-top">
+                      post by
+                      <cite title="Source Title">{{post.author}}</cite>
+                    </footer>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
 
-  
-    <div class="container">
-      <div class="p-4">
-        <h4 class="fst-italic">Elsewhere</h4>
-        <ol class="list-unstyled d-md-flex"  style="justify-content: space-around;">
-          <li><a href="#">GitHub</a></li>
-          <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-        </ol>
-      </div>
-    </div>
-  </div>
-</div>
-</main>
-</div>
-<div class="container">
-<footer class="blog-footer d-md-flex" style="justify-content: space-around;">
-    <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-    <p>
-    <a href="#">Back to top</a>
-    </p>
-</footer>
-</div>
+          </section>
+  </main>
 
 {% endblock body %}
