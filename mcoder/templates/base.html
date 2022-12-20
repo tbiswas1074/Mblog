@@ -4479,10 +4479,10 @@
     .navbar-light .navbar-nav .nav-link.active {
       color: rgba(0, 0, 0, 0.9);
     }
-    .navbar-light .navbar-toggler {
+    {% comment %} .navbar-light .navbar-toggler {
       color: rgba(0, 0, 0, 0.55);
       border-color: rgba(0, 0, 0, 0.1);
-    }
+    } {% endcomment %}
     .navbar-light .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
@@ -11320,7 +11320,7 @@
     }
     
     .page-section {
-      padding: 8rem 0;
+      padding: 5rem 0;
     }
     
     .text-white-75 {
@@ -11521,7 +11521,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 50px;
-    background-color: #f4623a;
+    background-color: #ff9e84;
     color: #fff;
     font-size: 22px;
     border: none
@@ -11566,6 +11566,13 @@
     display: none !important
 }
   
+.navbar-toggler>.close {
+  display:inline;
+}
+.navbar-toggler.collapsed>.close, .navbar-toggler:not(.collapsed)>.navbar-toggler-icon {
+  display:none;
+}
+
 
 
 
@@ -11579,8 +11586,11 @@
     {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
       <div class="container px-4 px-lg-5">
-        <img src="{% static 'b.png' %}" height="25px" style="padding-bottom: 4px"/> <a class="navbar-brand" href="/" style="padding-left: 2px;">Mblog</a>
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <img src="{% static 'b.png' %}" height="25px" style="padding-bottom: 4px"/> <a class="navbar-brand" href="/" style="padding-left: 2px;  margin-right: 0;">Mblog</a>
+          <a class="navbar-toggler navbar-toggler-right collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            <span class="my-1 mx-2 close" style="margin-right: 0!important;margin-left: 0!important;"><i class="fa-solid fa-bars-staggered" style="margin-right: 0!important;margin-left: 0!important;font-size: 30px;"></i></span>
+          </a>
           <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ms-auto my-2 my-lg-0">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
@@ -11663,10 +11673,11 @@
                 </form>
           </div>
       {% else %}
-      <input type="checkbox" id="check">
-   <label class="chat-btn" for="check"> 
-     <a style="background:#f4623a;" href="/login"><i class="fa fa-commenting-o comment"></i><i class="fa fa-close close"></i></a>
-    </label>
+
+        {% comment %} <input type="checkbox" id="check"> {% endcomment %}
+        <label class="chat-btn" for="check"> 
+          <a style="background:#ff9e84;" href="/login"><i class="fa fa-commenting-o comment"></i><i class="fa fa-close close"></i></a>
+        </label>
         {% endif %}
 
 
@@ -11777,7 +11788,7 @@
                     <a href="/about" class="text-white">About</a>
                   </p>
                   <p>
-                    <a href="/" class="text-white">Thank you for visiting</a>
+                    <a href="https://policies.google.com/terms?hl=en-US" class="text-white">Terms of Service</a>
                   </p>
                 </div>
                 <!-- Grid column -->
@@ -11829,7 +11840,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #3b5998;border-radius: 50%;"
-              href="https://www.facebook.com/"
+              href="https://www.facebook.com/t.biswas.23/"
               role="button"
               ><i class="fab fa-facebook-f"></i
             ></a>
@@ -11838,7 +11849,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #55acee;border-radius: 50%;"
-              href="https://twitter.com/"
+              href="https://twitter.com/biswastuhin1074"
               role="button"
               ><i class="fab fa-twitter"></i
             ></a>
@@ -11856,7 +11867,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #ac2bac;border-radius: 50%;"
-              href="https://www.instagram.com"
+              href="instagram.com/t_biswas_/"
               role="button"
               ><i class="fab fa-instagram"></i
             ></a>
@@ -11865,7 +11876,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #0082ca;border-radius: 50%;"
-              href="https://linkedin.com/"
+              href="https://www.linkedin.com/in/tuhin-biswas-250451214/"
               role="button"
               ><i class="fab fa-linkedin-in"></i
             ></a>
@@ -11873,7 +11884,7 @@
             <a
               class="btn text-white btn-floating m-1"
               style="background-color: #333333;border-radius: 50%;"
-              href="https://github.com/"
+              href="https://github.com/tbiswas1074"
               role="button"
               ><i class="fab fa-github"></i
             ></a>
