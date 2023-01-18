@@ -19,7 +19,7 @@ def home(request):
         c.append(i.likes)
     contex = {'sv':sv, 'totalviews':str(sum(a)), 'views':str(sum(b)), 'likes':str(sum(c)), 'totaluser':str(User.objects.all().count())}
 
-    return render(request, "home/index.html", contex)
+    return render(request, "home/home.html", contex)
 
 def handleLogin(request):
     if request.method == 'POST':
