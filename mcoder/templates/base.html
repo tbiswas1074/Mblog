@@ -79,10 +79,10 @@
       --bs-black-rgb: 0, 0, 0;
       --bs-body-color-rgb: 33, 37, 41;
       --bs-body-bg-rgb: 255, 255, 255;
-      --bs-font-sans-serif: Merriweather Sans;
+      --bs-font-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
       --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-      --bs-body-font-family: Merriweather Sans;
+      --bs-body-font-family: Merriweather, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
       --bs-body-font-size: 1rem;
       --bs-body-font-weight: 400;
       --bs-body-line-height: 1.5;
@@ -113,7 +113,6 @@
       background-color: var(--bs-body-bg);
       -webkit-text-size-adjust: 100%;
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      font-family: cursive;
     }
     
     hr {
@@ -131,7 +130,7 @@
     h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
       margin-top: 0;
       margin-bottom: 0.5rem;
-      font-family: Merriweather Sans;
+      font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-weight: 500;
       line-height: 1.2;
     }
@@ -183,7 +182,7 @@
     p {
       margin-top: 0;
       margin-bottom: 1rem;
-      font-family: cursive !important;
+      font-family: "Merriweather",cursive;
     }
     
     abbr[title],
@@ -280,7 +279,7 @@
     code,
     kbd,
     samp {
-      font-family: cursive !important;
+      font-family: cursive;
       font-size: 1em;
       direction: ltr /* rtl:ignore */;
       unicode-bidi: bidi-override;
@@ -3022,7 +3021,7 @@
     
     .btn {
       display: inline-block;
-      font-family: Merriweather Sans;
+      font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-weight: 400;
       line-height: 1.5;
       color: #212529;
@@ -5791,7 +5790,7 @@
       z-index: 1080;
       display: block;
       margin: 0;
-      font-family: Merriweather;
+      font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-style: normal;
       font-weight: 400;
       line-height: 1.5;
@@ -5893,7 +5892,7 @@
       z-index: 1070;
       display: block;
       max-width: 276px;
-      font-family: Merriweather;
+      font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-style: normal;
       font-weight: 400;
       line-height: 1.5;
@@ -11361,13 +11360,13 @@
       transition: background-color 0.2s ease;
     }
     #mainNav .navbar-brand {
-      font-family: Merriweather Sans;
+      font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-weight: 700;
       color: #212529;
     }
     #mainNav .navbar-nav .nav-item .nav-link {
       color: #6c757d;
-      font-family: Merriweather Sans;
+      font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-weight: 700;
       font-size: 0.9rem;
       padding: 0.75rem 0;
@@ -11473,7 +11472,7 @@
       text-align: center;
     }
     #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xxl .portfolio-box .portfolio-box-caption .project-category {
-      font-family: Merriweather Sans;
+      font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
       font-size: 0.85rem;
       font-weight: 600;
       text-transform: uppercase;
@@ -11588,9 +11587,9 @@
     {% endblock css %}
   </style>
   
+  {% load static %}
   </head>
   <body>
-    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
       <div class="container px-4 px-lg-5">
         <img src="{% static 'b.png' %}" height="25px" style="padding-bottom: 4px"/> <a class="navbar-brand" href="/" style="padding-left: 2px;  margin-right: 0;">Mblog</a>
@@ -11772,7 +11771,7 @@
                       class="mb-4 mt-0 d-inline-block mx-auto"
                       style="width: 60px; background-color: #7c4dff; height: 2px"
                       />
-                  <p style="font-family:cursive !important;">
+                  <p>
                     A blog is a type of website where the content is presented. Blog content is often referred to as entries or “blog posts”.
                     Read, write, like comment and be a good user to our website."Thank you"
                   </p>
@@ -11787,16 +11786,16 @@
                       class="mb-4 mt-0 d-inline-block mx-auto"
                       style="width: 75px; background-color: #7c4dff; height: 2px"
                       />
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/login" class="text-white">Login</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/signup" class="text-white">Signin</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/about" class="text-white">About</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="https://policies.google.com/terms?hl=en-US" class="text-white">Terms of Service</a>
                   </p>
                 </div>
@@ -11810,16 +11809,16 @@
                       class="mb-4 mt-0 d-inline-block mx-auto"
                       style="width: 108px; background-color: #7c4dff; height: 2px"
                       />
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/" class="text-white">Home</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/blog/" class="text-white">Blog Display</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/blog/blogcreate/" class="text-white">Create Blog</a>
                   </p>
-                  <p style="font-family:cursive !important;">
+                  <p>
                     <a href="/contact" class="text-white">Help</a>
                   </p>
                 </div>
@@ -11833,10 +11832,10 @@
                       class="mb-4 mt-0 d-inline-block mx-auto"
                       style="width: 73px; background-color: #7c4dff; height: 2px"
                       />
-                  <p style="font-family:cursive !important;"><i class="fas fa-home mr-3"></i> India, Bolpur, WB</p>
-                  <p style="font-family:cursive !important;"><i class="fas fa-envelope mr-3"></i> biswastuhin43@gmail.com</p>
-                  <p style="font-family:cursive !important;"><i class="fas fa-phone mr-3"></i> + 91 234 567 88 01</p>
-                  <p style="font-family:cursive !important;"><i class="fas fa-print mr-3"></i> + 91 234 567 89 38</p>
+                  <p><i class="fas fa-home mr-3"></i> India, Bolpur, WB</p>
+                  <p><i class="fas fa-envelope mr-3"></i> biswastuhin43@gmail.com</p>
+                  <p><i class="fas fa-phone mr-3"></i> + 91 234 567 88 01</p>
+                  <p><i class="fas fa-print mr-3"></i> + 91 234 567 89 38</p>
                 </div>
                 <!-- Grid column -->
               </div>
@@ -11904,7 +11903,7 @@
       
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-          © 2023 Copyright:
+          © 2020 Copyright:
           <a class="text-white" href="/">Mblog</a>
         </div>
         <!-- Copyright -->
