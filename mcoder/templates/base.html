@@ -2,6 +2,7 @@
 {% load static %}
 <html lang="en">
   <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% block title %} {% endblock  %}</title>
@@ -16,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
     <!-- SimpleLightbox plugin CSS-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-
+    {% load static %}
   <style>
     @charset "UTF-8";
     /*!
@@ -11413,7 +11414,7 @@
     header.masthead {
       padding-top: 10rem;
       padding-bottom: calc(10rem - 4.5rem);
-      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("https://img.freepik.com/free-vector/blog-concept-illustration-idea-posting-sharing-following_613284-2970.jpg?w=1060&t=st=1674305670~exp=1674306270~hmac=f7708bb514cdcb1a5c38a115383932f2db5db9bd648ff2060df82e4a46a4bcec");
+      background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("static/img/hm.jpg");
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: scroll;
@@ -11644,7 +11645,7 @@
       </div>
   </nav>
 
-
+  {% load static %}
   {% if user.is_authenticated %}
   <input type="checkbox" id="check">
   <label class="chat-btn" id="zo" for="check"> 
@@ -11673,7 +11674,7 @@
                 </form>
           </div>
       {% else %}
-
+      {% load static %}
         {% comment %} <input type="checkbox" id="check"> {% endcomment %}
         <label class="chat-btn" for="check"> 
           <a style="background:#ff9e84;" href="/login"><i class="fa fa-commenting-o comment"></i><i class="fa fa-close close"></i></a>
@@ -11732,7 +11733,7 @@
           </div>
         </div>
       </nav> {% endcomment %}
-
+      {% load static %}
         {% for message in messages %}
         <div class="position-absolute w-100 d-flex flex-column p-4" style="bottom: 93px; position;fixed;">
           <div class="toast align-items-center text-bg-{{ message.tags }} border-0" role="alert" aria-live="assertive" aria-atomic="true" >
@@ -11745,8 +11746,9 @@
           </div>
         </div>
         {% endfor %}
-
+        {% load static %}
       {% block body %}{% endblock body %}
+      {% load static %}
       <footer class="text-center text-white abd" style="background-color:rgb(33 37 41);opacity:1;">
         
         <!-- Grid container -->
@@ -11900,7 +11902,7 @@
         </div>
         <!-- Copyright -->
       </footer>
-
+      {% load static %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/245796b166.js" crossorigin="anonymous"></script>
         <script>
@@ -11912,10 +11914,10 @@
             }
           };
         </script>
-
+        {% load static %}
         <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-      
+        {% load static %}
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
 
     <script>
