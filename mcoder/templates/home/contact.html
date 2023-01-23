@@ -3,6 +3,7 @@
 {% block title %} Contact {% endblock title %}
 {% block contactactive %} active {% endblock contactactive %}
 {% block css %}
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 body{
     background: -webkit-linear-gradient(left, #9c97c3, #e0e1a2);
     font-family: cursive;
@@ -131,29 +132,29 @@ header.masthead {
                 <form id="contactForm" action="/blog/blogcreate/" method="post"> {% csrf_token %}
                     <!-- Name input-->
                     <div class="form-floating mb-3">
-                        <input class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." required/>
-                        <label for="title">Your name </label>
-                        <div class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
+                        <input style="font-family: 'Kalam', cursive !important;" class="form-control" name="name" id="name" type="text" placeholder="Enter your name..." required/>
+                        <label style="font-family: 'Kalam', cursive !important;" for="title">Your name </label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
                     </div>
                 
                     <div class="form-floating mb-3">
-                        <input class="form-control" name="email" id="email" placeholder="name@example.com" required/>
-                        <label for="email">Email address</label>
-                        <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                        <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                        <input style="font-family: 'Kalam', cursive !important;" class="form-control" name="email" id="email" placeholder="name@example.com" required/>
+                        <label style="font-family: 'Kalam', cursive !important;" for="email">Email address</label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                     </div>
                 
                     <div class="form-floating mb-3">
-                        <input class="form-control" name="phone" id="phone" type="text" placeholder="Contact number..." required/>
-                        <label for="phone">Your contact no </label>
-                        <div class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
+                        <input style="font-family: 'Kalam', cursive !important;" class="form-control" name="phone" id="phone" type="text" placeholder="Contact number..." required/>
+                        <label style="font-family: 'Kalam', cursive !important;" for="phone">Your contact no </label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" data-sb-feedback="title:required">A name is required.</div>
                     </div>
                 
                     <!-- Message input-->
                     <div class="form-floating mb-3">
-                        <textarea class="form-control" name="content" id="content" type="text" placeholder="Enter your message here..." style="height: 10rem" required></textarea>
-                        <label for="content">Drop your message</label>
-                        <div class="invalid-feedback" data-sb-feedback="message:required">A content is required.</div>
+                        <textarea class="form-control" name="content" id="content" type="text" placeholder="Enter your message here..." style="height: 10rem,font-family: 'Kalam', cursive !important;" required></textarea>
+                        <label style="font-family: 'Kalam', cursive !important;" for="content">Drop your message</label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" data-sb-feedback="message:required">A content is required.</div>
                     </div>
 
 
@@ -180,7 +181,7 @@ header.masthead {
             </div>
         </div>
         <div class="row gx-4 gx-lg-5 justify-content-center">
-            <div class="col-lg-4 text-center mb-5 mb-lg-0">
+            <div style="font-family: 'Kalam', cursive !important;" class="col-lg-4 text-center mb-5 mb-lg-0">
                 <i class="bi-phone fs-2 mb-3 text-muted"></i>
                 <div>+91 123-4567-891</div>
             </div>
