@@ -3,6 +3,7 @@
 {% block title %} Blog Create {% endblock title %}
 {% block homeactive %} active {% endblock homeactive %}
 {% block css %}
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 body{
     font-family: cursive;
     background:-webkit-linear-gradient(left, #c09dcb, #7ccfdd);
@@ -90,15 +91,15 @@ body{
                     <!-- Name input-->
                     <div class="form-floating mb-3">
                         <input class="form-control" id="title" name="title" type="text" placeholder="Enter Blog Title..." required/>
-                        <label for="title"> Blog Title </label>
-                        <div class="invalid-feedback" required>A name is required.</div>
+                        <label style="font-family: 'Kalam', cursive !important;" for="title"> Blog Title </label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" required>A name is required.</div>
                     </div>
                 
                     <!-- Message input-->
                     <div class="form-floating mb-3">
                         <textarea class="form-control" name="content" id="content" type="text" placeholder="Enter your message here..." style="height: 10rem"></textarea>
-                        <label for="content">Blog Content</label>
-                        <div class="invalid-feedback" >A content is required.</div>
+                        <label style="font-family: 'Kalam', cursive !important;" for="content">Blog Content</label>
+                        <div style="font-family: 'Kalam', cursive !important;" class="invalid-feedback" >A content is required.</div>
                     </div>
 
                     <input type="hidden" name="author" value="{{post.author}}">

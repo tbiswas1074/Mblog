@@ -4,6 +4,7 @@
 {% block blogactive %} active {% endblock blogactive %}
 
 {% block css %}
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -336,13 +337,13 @@
                   <div class="card__icon"><i class="fa-solid fa-quote-left"></i></div>  
                     <p class="card__exit">
                     <i class="fa-regular fa-heart"></i> {{post.likes}}</p>
-                    <em><h3 class="mb-0" style="font-family: 'Monoton', cursive;">{{post.title}}</h3></em>
+                    <em><h3 class="mb-0" style="font-family: 'Kalam', cursive !important;">{{post.title}}</h3></em>
                     <div class="mb-1 text-muted mt-2 mb-2">{{post.timeStamp}}<span class="mx-4"><button type="button" class="btn btn-light btn-sm" style="border-color: black;
                       border-radius: 30px 30px 30px 30px !important;
                       box-shadow: 0 4px 15px 0 rgb(7 42 68 / 9%);" disabled>
                       Views <span class="badge text-bg-secondary">{{post.views}}</span>
                     </button></span></div>
-                    <p class="mb-auto"><div class="preview">{{post.content|safe|truncatechars:200}}</div></p>
+                    <p class="mb-auto" style="font-family: 'Kalam', cursive !important;"><div class="preview">{{post.content|safe|truncatechars:200}}</div></p>
                     {% if user.is_authenticated %}
                     <form action="/blog/postView" method="post">{% csrf_token %}
                       <input type="hidden" name="pSno" value="{{post.sno}}">
