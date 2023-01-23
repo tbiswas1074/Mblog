@@ -457,7 +457,7 @@ header.masthead p {
                       box-shadow: 0 4px 15px 0 rgb(7 42 68 / 9%);" disabled>
                       Views <span class="badge text-bg-secondary">{{post.views}}</span>
                     </button></span></div>
-                    <p class="mb-auto" style="font-family: 'Kalam', cursive !important;"><div class="preview">{{post.content|safe|truncatechars:200}}</div></p>
+                    <p class="mb-auto" style="font-family: 'Kalam', cursive !important;"><div class="preview" style="font-family: 'Kalam', cursive !important;">{{post.content|safe|truncatechars:200}}</div></p>
                     {% if user.is_authenticated %}
                     <form action="/blog/postView" method="post">{% csrf_token %}
                       <input type="hidden" name="pSno" value="{{post.sno}}">
