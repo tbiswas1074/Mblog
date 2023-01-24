@@ -29,7 +29,8 @@ SECRET_KEY = 'django-insecure-mi7rhlxz7d4w7!f53&ca$&x^n47v%+ep4xd_chu$qyq#+aq944
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['43.205.230.15','www.mblog.host','mblog.host']
+# ALLOWED_HOSTS = ['43.205.230.15','www.mblog.host','mblog.host']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -81,23 +82,23 @@ WSGI_APPLICATION = 'mcoder.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mblog',
-        'HOST': 'mblog.cxpomrecsrby.ap-south-1.rds.amazonaws.com',
-        'USER': 'admin',
-        'PASSWORD': 'Stu1997hin*',
-        'PORT': '3306'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'mblog',
+#         'HOST': 'mblog.cxpomrecsrby.ap-south-1.rds.amazonaws.com',
+#         'USER': 'admin',
+#         'PASSWORD': 'Stu1997hin*',
+#         'PORT': '3306'
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
